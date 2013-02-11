@@ -1,5 +1,9 @@
 /* Fichier CSS */
 
+label.validation-error {
+     color: #990000;
+}
+
 .btn{
      font-family: Arial,sans-serif;
      font-size: 1.6em;
