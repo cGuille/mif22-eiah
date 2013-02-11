@@ -9,16 +9,29 @@
 
     $(function () {
         $('form').on('submit', onIdentification);
+        $('#firstname').focus();
     });
 
     function onIdentification() {
         var userData = {
-                name: $(this).find('[name=firstname]').val(),
+                name: $(this).find('[name=firstname]').val().trim(),
                 level: $(this).find('[name=level]:checked').attr('value')
             };
 
+        $('label[for=firstname]').removeClass('validation-error');
+        $('label[for=primaire], label[for=college]').removeClass('validation-error');
+
         if (!userData.name || (userData.level !== 'primaire' && userData.level !== 'college')) {
-            console.error('Form validation error (todo)');
+            if (!userData.name) {
+                console.error('No name specified');
+                $('label[for=firstname]').addClass('validation-error');
+            }
+            if (userData.level !== 'primaire' && userData.level !== 'college') {
+                console.error('No level specified');
+                $('label[for=primaire], label[for=college]').addClass('validation-error');
+            }
+
+            console.error('form validation error');
             return false;
         }
 
