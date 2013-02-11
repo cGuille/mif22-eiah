@@ -12,5 +12,19 @@
         <script src="src/main.js"></script>
     </head>
     <body>
+        <!-- Formulaire d'identification de l'apprenant -->
+    	<form>
+		<p>    		
+			<label for="firstname">Entre ton prénom :</label><br/>
+	    		<input type="text" name="firstname" id="firstname"/>
+		</p>    		
+		<p>    		
+			<input type="radio" name="level" id="primaire" value="primaire" /><label for="primaire">Je suis en primaire</label><br/>
+	    		<input type="radio" name="level" id="college" value="college" /><label for="college">Je suis au collège</label>
+		</p>    		
+
+    		<input type="submit" value="Commencer" />
+    	</form>
+	<!-- fin du formulaire -->
     </body>
 </html>
