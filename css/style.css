@@ -1,3 +1,192 @@
+html { 
+  height: 100%;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+}
+
+/* html5 element block*/
+article, aside, figure, footer, header, hgroup, nav, section { 
+  display:block;
+}
+
+body { 
+  font: normal .80em arial, sans-serif;
+  background-color: #002A3E;
+  color: #FFF;
+}
+
+p { 
+  padding: 0 0 20px 0;
+  line-height: 1.7em;
+}
+
+h1, h2, h3 { 
+  font: normal 140% arial, sans-serif;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;
+  color: #FFF;
+}
+
+a, a:hover { 
+  outline: none;
+  text-decoration: underline;
+  color: #00E6FF;
+}
+
+a:hover { 
+  text-decoration: none;
+}
+
+img{
+  margin-left:25%;
+}
+#main, nav, #container, #logo, #site_content, footer { 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#main {
+  margin: 50px auto;
+  width: 1000px;
+  border-radius: 13px 13px 13px 13px;
+  -moz-border-radius: 13px 13px 13px 13px;
+  -webkit-border: 13px 13px 13px 13px;
+  background: transparent url(../images/main.png);
+  padding-bottom: 30px;
+}
+
+header { 
+  background: transparent;
+  height: 179px;
+}
+
+#logo { 
+  width: 930px;
+  height: 135px;
+  background: transparent;
+  color: #888;
+  padding: 0;
+}
+
+#logo h1, #logo h2 { 
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0;
+}
+
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover { 
+  padding: 20px 0 0 0;
+  color: #FFF;
+  text-decoration: none;
+}
+
+nav { 
+  height: 44px;
+  width: 930px;
+  margin: -34px auto 0 auto;
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  color: #FFF;
+  border: solid 1px #003B56;
+  background: #002A3E;
+} 
+
+#menu_container { 
+  width: 930px;
+  margin: 0 auto 0 auto;
+}
+
+#site_content { 
+  width: 930px;
+  overflow: hidden;
+  margin: 0px auto 0 auto;
+  padding: 15px 0 15px 0;
+}
+
+/* alignement des 3 divs */
+#content_box {
+	clear: both;
+	width: 940px;
+	height: 150px;
+}
+
+#center_box {
+	clear: both;
+	width: 940px;
+	height: 150px;
+	margin-left:330px;
+}
+
+.box { 
+	float: left; 
+	width: 230px; 
+	height: 40px; 
+	padding: 20px; 
+	margin-right: 20px; 
+	background: #22003C;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+    opacity: 0.8;
+	font-size: 20px; 
+	text-align: center;
+}
+/* fin alignement 3 divs */
+#evaluation { 
+  width: 925px;
+  padding: 5px 0 20px 0;
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  color: #000;
+  border: solid 1px #A0A0A0;
+  background: #FFF;
+}
+
+.content h1 { 
+  padding: 5px 15px 20px 0;
+  text-shadow:  #000 1px 1px;
+  margin: 0 1px;
+  color: #FFF;
+}
+
+.content_item { 
+  padding: 15px 0;
+}
+
+.paperclip { 
+  float: left;
+  position: relative; 
+  z-index: 0;
+  vertical-align: middle; 
+  margin: -15px 0 -60px -40px;
+}
+
+.content { 
+  text-align: left;
+ /* width: 630px;*/
+  margin: 0 0 15px 0;
+  float: left;
+  font-size: 120%;
+  padding: 14px 0 0 0;
+}
+  
+.content ul { 
+  margin: 2px 0 22px 0px;
+}
+
+.content ul li{ 
+  list-style-type: none;
+  background: url(../images/bullet.png) no-repeat;
+  margin: 0 0 0 0; 
+  padding: 0 0 4px 28px;
+  line-height: 1.5em;
+}
+
 /* Fichier CSS */
 
 label.validation-error {
@@ -38,14 +227,31 @@ label.validation-error {
      
 }
 
-/* note pour moi même : 
-* 	- identification :
-* 	beau + centrage + cool  
-* 	- choix du theme :
-* 	img ??
-* 	- cours + exos :
-* 	beeeeaaaauuuuuuuu
-*	[...]
-*/
+footer { 
+  width: 930px;
+  height: 15px;
+  padding: 5px 0 20px 0;
+  text-align: center; 
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  color: #FFF;
+  border: solid 1px #003B56;
+  background: #002A3E;
+}
 
+footer p { 
+  line-height: 1.7em;
+  padding: 0 0 10px 0;
+}
 
+footer a { 
+  color: #FFF;
+  text-decoration: none;
+}
+
+footer a:hover { 
+  color: #FFF;
+  text-shadow: none;
+  text-decoration: underline;
+}
