@@ -48,7 +48,14 @@
     }
 
     function chooseTheme() {
-        console.log('Theme clicked');
+        var theme = $(this).text();
+
+        switch (theme) {
+            default:
+                console.error('The theme "' + theme + '" is not implemented.');
+                break;
+        }
+        window.alert('Aller à la page du theme: « ' + theme + ' »');
     }
 
     appState.on('change:page', function (state, page) {
