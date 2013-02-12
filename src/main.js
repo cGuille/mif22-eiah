@@ -5,6 +5,10 @@
     // console.log('jquery: ' + $);
     // console.log('underscore:' + _);
 
+    if (!storage.profiles) {
+        storage.profiles = {};
+    }
+
     var appState = new Backbone.Model({
             page: '',
             profile: new Backbone.Model()
@@ -15,6 +19,7 @@
     });
     appState.get('profile').on('change', function () {
         storage.profile = JSON.stringify(appState.get('profile'));
+        storage.profiles[appState.get('profile').get('name')] = storage.profile;
     });
 
     function reset() {
