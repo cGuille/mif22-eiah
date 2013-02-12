@@ -10,6 +10,13 @@
             profile: new Backbone.Model()
         });
 
+    appState.on('change:page', function () {
+        storage.page = appState.get('page');
+    });
+    appState.get('profile').on('change', function () {
+        storage.profile = JSON.stringify(appState.get('profile'));
+    });
+
     function reset() {
         appState.get('profile').clear();
         appState.set('page', 'home');
@@ -76,13 +83,6 @@
                 console.error('unknown page `' + page + '`');
                 break;
         }
-    });
-
-    appState.on('change:page', function () {
-        storage.page = appState.get('page');
-    });
-    appState.get('profile').on('change:profile', function () {
-        storage.profile = JSON.stringify(appState.get('profile'));
     });
 
     $(function () {
