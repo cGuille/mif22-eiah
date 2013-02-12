@@ -1,16 +1,14 @@
-(function (Backbone, $, _, storage) {
+(function (Backbone, $, _, storage, pages) {
     'use strict';
 
     // console.log('backbone: ' + Backbone);
     // console.log('jquery: ' + $);
     // console.log('underscore:' + _);
 
-    var userProfile = new Backbone.Model();
-
-    $(function () {
-        $('form').on('submit', onIdentification);
-        $('#firstname').focus();
-    });
+    var appState = new Backbone.Model({
+            page: '',
+            profile: new Backbone.Model()
+        });
 
     function onIdentification() {
         var userData = {
@@ -35,21 +33,37 @@
             return false;
         }
 
-        userProfile.set(userData);
+        appState.get('profile').set(userData);
+        appState.set('page', 'themes');
 
         return false;
     }
 
-    userProfile.once('change', function () {
-        if (!userProfile.has('name') || !userProfile.has('level')) {
-            return;
+    appState.on('change:page', function (state, page) {
+        var previousPage = state.previous('page'),
+            profile = appState.get('profile');
+
+        switch (page) {
+            case 'home':
+                $('body').html(pages[page](profile));
+                $('form').on('submit', onIdentification);
+                $('#firstname').focus();
+                break;
+            case 'themes':
+                $('body').html(pages[page](profile));
+                break;
+            default:
+                console.error('unknown page `' + page + '`');
+                break;
         }
-
-        $('body').html('<h1>Page des thèmes (' + userProfile.get('level') + ', ' + userProfile.get('name') + ')</h1>');
     });
 
-    userProfile.on('change', function () {
-        storage.profile = JSON.stringify(userProfile);
+    appState.get('profile').on('change', function () {
+        storage.profile = JSON.stringify(appState.get('profile'));
     });
 
-}(window.Backbone, window.jQuery, window._, window.localStorage));
+    $(function () {
+        appState.set('page', 'home');
+    });
+
+}(window.Backbone, window.jQuery, window._, window.localStorage, window.pages));
