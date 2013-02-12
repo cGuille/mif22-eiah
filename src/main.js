@@ -10,7 +10,13 @@
             profile: new Backbone.Model()
         });
 
+    function reset() {
+        appState.get('profile').clear();
+        appState.set('page', 'home');
+    }
     window.appState = appState;// for console debugging purpose
+    window.reset = reset;// for console debugging purpose
+
 
     function onIdentification() {
         var userData = {
