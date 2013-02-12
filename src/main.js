@@ -10,6 +10,8 @@
             profile: new Backbone.Model()
         });
 
+    window.appState = appState;// for console debugging purpose
+
     function onIdentification() {
         var userData = {
                 name: $(this).find('[name=firstname]').val().trim(),
@@ -40,7 +42,7 @@
     }
 
     function chooseTheme() {
-        
+        console.log('Theme clicked');
     }
 
     appState.on('change:page', function (state, page) {
@@ -63,12 +65,21 @@
         }
     });
 
-    appState.get('profile').on('change', function () {
+    appState.on('change:page', function () {
+        storage.page = appState.get('page');
+    });
+    appState.get('profile').on('change:profile', function () {
         storage.profile = JSON.stringify(appState.get('profile'));
     });
 
     $(function () {
-        appState.set('page', 'home');
+        var page = 'home';
+
+        if (storage.page && storage.profile) {
+            page = storage.page;
+        }
+        appState.get('profile').set(JSON.parse(storage.profile));
+        appState.set('page', page);
     });
 
 }(window.Backbone, window.jQuery, window._, window.localStorage, window.pages));
