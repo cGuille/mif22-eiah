@@ -77,8 +77,8 @@
 
         if (storage.page && storage.profile) {
             page = storage.page;
+            appState.get('profile').set(JSON.parse(storage.profile));
         }
-        appState.get('profile').set(JSON.parse(storage.profile));
         appState.set('page', page);
     });
 
