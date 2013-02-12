@@ -39,6 +39,10 @@
         return false;
     }
 
+    function chooseTheme() {
+        
+    }
+
     appState.on('change:page', function (state, page) {
         var previousPage = state.previous('page'),
             profile = appState.get('profile');
@@ -51,6 +55,7 @@
                 break;
             case 'themes':
                 $('body').html(pages[page](profile));
+                $('.box').on('click', chooseTheme);
                 break;
             default:
                 console.error('unknown page `' + page + '`');
