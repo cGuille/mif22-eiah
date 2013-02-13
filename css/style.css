@@ -111,7 +111,7 @@ nav {
 #content_box {
 	clear: both;
 	width: 940px;
-	height: 150px;
+	height: 90px;
 }
 
 #center_box {
@@ -122,20 +122,33 @@ nav {
 }
 
 .box { 
-	float: left; 
-	width: 230px; 
-	height: 40px; 
-	padding: 20px; 
-	margin-right: 20px; 
-	background: #22003C;
-	-webkit-border-radius: 13px 13px 13px 13px; 
-	-moz-border-radius: 13px 13px 13px 13px;
-	border-radius: 13px 13px 13px 13px;
-    opacity: 0.8;
-	font-size: 20px; 
-	text-align: center;
+        float: left; 
+        width: 230px; 
+        height: 40px; 
+        padding: 20px; 
+        margin-right: 20px; 
+        background: #22003C;
+        -webkit-border-radius: 13px 13px 13px 13px; 
+        -moz-border-radius: 13px 13px 13px 13px;
+        border-radius: 13px 13px 13px 13px;
+        opacity: 0.8;
+        font-size: 20px; 
+        text-align: center;
 }
 /* fin alignement 3 divs */
+.small_box { 
+      background: none repeat scroll 0 0 #22003C;
+      border-radius: 13px 13px 13px 13px;
+      float: left;
+      font-size: 14px;
+      height: 30px;
+      margin-right: 20px;
+      opacity: 0.8;
+      padding: 15px;
+      text-align: center;
+      width: 95px;
+}
+
 #evaluation { 
   width: 925px;
   padding: 5px 0 20px 0;
