@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <title></title>
+        <script src="../../lib/underscore-dev.js"></script>
+        <!--<script src="lib/underscore-bin.js"></script>-->
+        <script src="../../lib/jquery-1.9.1-dev.js"></script>
+        <!--<script src="lib/jquery-1.9.1-bin.js"></script>-->
+        <script src="../../lib/backbone-dev.js"></script>
+        <!--<script src="lib/backbone-bin.js"></script>-->
+        <script src="../../src/main.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!--<h1>MIF22</h1>
+          <h2>Logiciels éducatifs</h2>-->
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container"></div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="content">
+        <h3>Le système digestif</h3>
+        <p>Pendant la digestion ,l'&eacute;piglotte s'abaisse, la glotte se releve ce qui ferme la trach&eacute;e</p>
+        <p>Les enzimes qui intervienes au niveau de l'intestion sont les peptidases, l'amylase,et les lipases.</p>
+         <form id="form_quiz">
+            <div>  
+                <dl>
+                  <dt class="item_title">Quelle(s) voie(s) suivent les aliments absorbés qui ont traversé les villosités intestinales ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="1_1" name="ans_1"> La voie sanguine</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="1_2" name="ans_1"> La voie lymphatique</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="1_3" name="ans_1"> Les voies sanguine et lymphatique</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Quel est le nombre de glandes salivaires ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="2_1" name="ans_2"> 1</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="2_2" name="ans_2"> 2</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="2_3" name="ans_2"> 3</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">À quelle partie du tube digestif appartiennent le duodénum, le jéjunum et l&#039;iléon ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="3_1" name="ans_3"> le colon</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="3_2" name="ans_3"> Au gros intestin</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="3_3" name="ans_3"> À l&#039;intestin grêle.</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Par quel orifice l&#039;œsophage pénètre-t-il dans l&#039;estomac?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="4_1" name="ans_4"> l&#039;esophage</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="4_2" name="ans_4"> Le pylore</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="4_3" name="ans_4"> Le cardia</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Qu&#039;est-ce qui permet la fermeture de la trachée pendant la déglutition ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="5_1" name="ans_5"> La langue</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="5_2" name="ans_5"> La glotte.</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="5_3" name="ans_5"> La glotte et l&#039;épiglotte</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Quel est le rôle de la luette pendant la déglutition ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="6_1" name="ans_6"> Elle ferme la trachée</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="6_2" name="ans_6"> Elle ouvre l&#039;esophage</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="6_3" name="ans_6"> Elle ferme les fosses nasales</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Où sont situées les glandes salivaires?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="7_1" name="ans_7"> Dans le pharynx</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="7_2" name="ans_7"> Sur la langue</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="7_3" name="ans_7"> Dans la bouche.</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Les dents chez l&#039;adulte sont :</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="8_1" name="ans_8"> 4 incisives, 8 canines, 8 prémolaires, 12 molaires</label></dd>
+                              <dd><label class="inline_label"><input type="radio" disabled="disabled" checked="checked" class="radio" value="8_2" name="ans_8"> 8 incisives, 4 canines. 12 prémolaires, 8 molaires</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="8_3" name="ans_8"> 8 incisives, 4 canines, 8 prémolaires, 12 molaires</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Quel est le nom de la membrane qui entoure les organes digestifs ?</dt>
+                              <dd><label class="inline_label"><input type="radio" disabled="disabled" checked="checked" class="radio" value="9_1" name="ans_9"> Le péricarde</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="9_2" name="ans_9"> Le péritoine</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="9_3" name="ans_9"> La paroi intestinale</label></dd>
+                        </dl>
+            </div><br/>
+            <div>  
+                <dl>
+                  <dt class="item_title">Comment appelle-t-on le passage des aliments digérés dans la circulation sanguine ?</dt>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="10_1" name="ans_10"> La nutrition</label></dd>
+                              <dd><label class="inline_label"><input type="radio" class="radio" value="10_2" name="ans_10"> La digestion</label></dd>
+                              <dd><label class="inline_label"><input type="radio" disabled="disabled" checked="checked" class="radio" value="10_3" name="ans_10"> L&#039;absorption</label></dd>
+                        </dl>
+            </div><br/>
+            <input type="submit" value="Voir les réponses" name="submit_quiz" class="btn">
+         </form>
+
+      </div>
+    </div>
+        
+    <footer>
+     <!-- <p>Copyright &copy; 2013</p>-->
+    </footer>
+        
+  </div>
+  <p>&nbsp;</p>
+</body>
+</html>

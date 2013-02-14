@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <title></title>
+        <script src="../../lib/underscore-dev.js"></script>
+        <!--<script src="lib/underscore-bin.js"></script>-->
+        <script src="../../lib/jquery-1.9.1-dev.js"></script>
+        <!--<script src="lib/jquery-1.9.1-bin.js"></script>-->
+        <script src="../../lib/backbone-dev.js"></script>
+        <!--<script src="lib/backbone-bin.js"></script>-->
+        <script src="../../src/main.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!--<h1>MIF22</h1>
+          <h2>Logiciels éducatifs</h2>-->
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container"></div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="content">
+        <h3>Les os du corps humain</h3>
+
+            <form id="form_quiz">
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">Une vertèbre est constitué d&#039;un corps et de 3 apophyses et d&#039;un trou cérébral au milieu duquel passe la moelle épinière</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="1_1" name="ans_1"> faux</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="1_2" name="ans_1"> vrai</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">La colonne vertébrale (rachis) est composé de :</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="2_1" name="ans_2"> 30 vertèbres</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="2_2" name="ans_2"> 33 vertèbres</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">dans la Ceinture scapulaire on trouve :</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="3_1" name="ans_3"> sacrum, coccyx, os iliaque, ischon</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="3_2" name="ans_3"> 2 os omoplate, clavicule</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">dans la ceinture pelvienne on trouve :</dt>
+                                <dd><label class="inline_label"><input type="radio"checked="checked" class="radio" value="4_1" name="ans_4"> omoplate, clavicule</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="4_2" name="ans_4"> sacrum, coccyx, os iliaque, ischon</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">le cubitus est :</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="5_1" name="ans_5"> bras</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="5_2" name="ans_5"> avant bras</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">définition métatarse</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="6_1" name="ans_6"> talon</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="6_2" name="ans_6"> paume main</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="6_3" name="ans_6"> plante des pieds</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">le tissu périostique est :</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="7_1" name="ans_7"> au centre de l&#039;os</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="7_2" name="ans_7"> tissu membraneux qui recouvre l&#039;os compact (entoure la diaphyse)</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">trouvez la pathologie de la définition suivante : courbure en avant du rachis lombaire.</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="8_1" name="ans_8"> Cyphose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="8_2" name="ans_8"> Scoliose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="8_3" name="ans_8"> Lordose</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">trouvez la pathologie de la définition suivante : déviation latérale du rachis</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="9_1" name="ans_9"> Lordose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="9_2" name="ans_9"> Cyphose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="9_3" name="ans_9"> Scoliose</label></dd>
+                          </dl>
+              </div><br/>
+              <div>  
+                
+                  <dl>
+                    <dt class="item_title">trouvez la pathologie de la définition suivante :courbure en arrière très accentuée du rachis dorsal,</dt>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="10_1" name="ans_10"> Lordose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="10_2" name="ans_10"> Scoliose</label></dd>
+                                <dd><label class="inline_label"><input type="radio" class="radio" value="10_3" name="ans_10"> Cyphose</label></dd>
+                          </dl>
+              </div><br/>
+            <input type="submit" value="Voir les réponses" name="submit_quiz" class="btn">
+            </form>
+
+
+      </div>
+    </div>
+        
+    <footer>
+     <!-- <p>Copyright &copy; 2013</p>-->
+    </footer>
+        
+  </div>
+  <p>&nbsp;</p>
+</body>
+</html>
