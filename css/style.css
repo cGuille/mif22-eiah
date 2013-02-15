@@ -239,6 +239,31 @@ label.validation-error {
      margin:0 0 0 0;
      
 }
+/* questions QCM */
+.item_title {
+    margin: 0 0 10px;
+}
+/* #end QCM */
+
+/* box exo os superieur/inferieur */
+#content_box_exo {
+        clear: both;
+        width: 940px;
+        height:250px;
+}
+.box_exo {
+    background: none repeat scroll 0 0 #22003C;
+    border-radius: 13px 13px 13px 13px;
+    float: left;
+    font-size: 20px;
+    height: 200px;
+    margin-right: 20px;
+    opacity: 0.6;
+    padding: 20px;
+    text-align: center;
+    width: 410px;
+}
+/* #end box exo os superieur/inferieur */
 
 footer { 
   width: 930px;
