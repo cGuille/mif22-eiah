@@ -297,7 +297,7 @@ input + label.right {
 #content_box_exo {
         clear: both;
         width: 940px;
-        height:250px;
+        height:300px;
 }
 .box_exo {
     background: none repeat scroll 0 0 #22003C;
@@ -312,6 +312,19 @@ input + label.right {
     width: 410px;
 }
 /* #end box exo os superieur/inferieur */
+
+.link{
+        color:#0000ff;
+        cursor:pointer;
+}
+.link:hover
+{
+        text-decoration:underline;
+}
+
+.drag{
+        cursor:pointer;
+}
 
 footer { 
   width: 930px;

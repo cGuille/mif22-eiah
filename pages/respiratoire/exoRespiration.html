@@ -11,6 +11,24 @@
         <script src="../../lib/backbone-dev.js"></script>
         <!--<script src="lib/backbone-bin.js"></script>-->
         <script src="../../src/main.js"></script>
+        <script>
+          function allowDrop(ev)
+          {
+                  ev.preventDefault();
+          }
+
+          function drag(ev)
+          {
+                  ev.dataTransfer.setData("Text",ev.target.id);
+          }
+
+          function drop(ev)
+          {
+                  ev.preventDefault();
+                  var data=ev.dataTransfer.getData("Text");
+                  ev.target.appendChild(document.getElementById(data));
+          }
+	</script>
 </head>
 
 <body>
@@ -29,25 +47,26 @@
     <div id="site_content">
       <div class="content">
             <div id="content_box_exo">
-                <div id="box_inf" class="box_exo">MEMBRE INFERIEUR</div>
-                <div id="box_sup" class="box_exo">MEMBRE SUPERIEUR</div>
+                <div id="box_inf" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE INFERIEUR</div>
+                <div id="box_sup" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE SUPERIEUR</div>
+          	<button type="button" class="btn">Valider</button><br/>
             </div>
             <div id="evaluation">
-              <span id="item1">cubitus</span>
-              <span id="item2">clavicule</span>
-              <span id="item3">métacarpe</span>
-              <span id="item4">radius</span>
-              <span id="item5">humérus</span>
-              <span id="item6">carpe</span>
-              <span id="item7">phalanges</span>
-              <span id="item8">omoplate</span>
-              <span id="item9">fémur</span>
-              <!--<span id="item">tibia</span>
-              <span id="item">péroné</span>
-              <span id="item">tarse</span>
-              <span id="item">phalanges</span>
-              <span id="item">rotule</span>
-              <span id="item">metatarse</span>-->
+              <div id="item1" class="drag" draggable="true" ondragstart="drag(event)">cubitus</div>
+              <div id="item2" class="drag" draggable="true" ondragstart="drag(event)">clavicule</div>
+              <div id="item3" class="drag" draggable="true" ondragstart="drag(event)">métacarpe</div>
+              <div id="item4" class="drag" draggable="true" ondragstart="drag(event)">radius</div>
+              <div id="item5" class="drag" draggable="true" ondragstart="drag(event)">humérus</div>
+              <div id="item6" class="drag" draggable="true" ondragstart="drag(event)">carpe</div>
+              <div id="item7" class="drag" draggable="true" ondragstart="drag(event)">phalanges</div>
+              <div id="item8" class="drag" draggable="true" ondragstart="drag(event)">omoplate</div>
+              <div id="item9" class="drag" draggable="true" ondragstart="drag(event)">fémur</div>
+              <div id="item10" class="drag" draggable="true" ondragstart="drag(event)">tibia</div>
+              <div id="item11" class="drag" draggable="true" ondragstart="drag(event)">péroné</div>
+              <div id="item12" class="drag" draggable="true" ondragstart="drag(event)">tarse</div>
+              <div id="item13" class="drag" draggable="true" ondragstart="drag(event)">phalanges</div>
+              <div id="item14" class="drag" draggable="true" ondragstart="drag(event)">rotule</div>
+              <div id="item15" class="drag" draggable="true" ondragstart="drag(event)"">metatarse</div>
             </div>
 <!--
 - membre supérieure :
@@ -77,5 +96,6 @@ metatarse
         
   </div>
   <p>&nbsp;</p>
+
 </body>
 </html>
