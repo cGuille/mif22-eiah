@@ -48,24 +48,28 @@
 	</p>
 	<h2>Quelques os</h2>
 	<p>
-	- Mandibule : os qui forme la mâchoire inférieure et qui permet de mastiquer.<br/>
+	- Main : ensemble d’os qui comprend cinq doigts et grâce auquel on peut saisir des objets.<br/>
+	- Pied : ensemble d’os qui comprend cinq orteils et grâce auquel on peut marcher.<br/>
 	- Tibia : gros os de la jambe situé entre le genou et le pied.<br/>
 	- Omoplate : os plat large, en forme de triangle et situé dans le haut du dos.<br/>
 	- Humérus : os du bras situé entre l’épaule et le coude.<br/>
+	- Crâne : boîte arrondie qui recouvre et protège le cerveau.<br/>	
+	- Côtes : os au nombre de 24, courbés en forme d’arc et qui forment les côtés de la poitrine<br/>
+	<span class="link" id="btn_texte" onclick="javascript:see_more('texte');">Voir plus</span>
+	 <div id="texte" class="hidden" style="display:none">
+	- Mandibule : os qui forme la mâchoire inférieure et qui permet de mastiquer.<br/>
 	- Péroné : os mince de la jambe situé entre le genou et le pied.<br/>
 	- Sternum : os allongé situé au milieu de la poitrine.<br/>
-	- Crâne : boîte arrondie qui recouvre et protège le cerveau.<br/>
 	- Fémur : os le plus long du corps, situé entre le bassin et le genou.<br/>
 	- Radius : os du bras situé entre le coude et le poignet et aligné avec le pouce.<br/>
 	- Vertèbres : os du dos au nombre de 33 formant la colonne vertébrale, entre le crâne et le bassin.<br/>
-	- Main : ensemble d’os qui comprend cinq doigts et grâce auquel on peut saisir des objets.<br/>
-	- Pied : ensemble d’os qui comprend cinq orteils et grâce auquel on peut marcher.<br/>
 	- Maxillaire : os dans lequel sont emboîtées les dents de la mâchoire supérieure.<br/>
 	- Clavicule : os de l’épaule, mince, qui forme un C et qui s’articule avec le sternum et l’omoplate.<br/>
 	- Os iliaque : grand os plat situé entre le dos et les jambes et qui forme le bassin.<br/>
 	- Cubitus : os du bras situé entre le coude et le poignet et aligné avec le petit doigt de la main.<br/>
-	- Côtes : os au nombre de 24, courbés en forme d’arc et qui forment les côtés de la poitrine<br/>
+	 </div>
 	</p>
+
 	<h2>Les os de la jambe</h2>
 	<p>Les os de la jambe s'articulent en trois endroits: la hanche, le genou et la cheville.<img src="../../images/os/jambe.gif" alt="les os de la jambe"></p>
 	<h2>Les os de la main</h2>
@@ -85,5 +89,20 @@
 	
   </div>
   <p>&nbsp;</p>
+    <script>
+  function see_more(id){
+        if(document.getElementById(id).style.display=="none")
+        {
+                document.getElementById(id).style.display="block";
+                document.getElementById('btn_'+id).innerHTML='Cacher le texte';
+        }
+        else
+        {
+                document.getElementById(id).style.display="none";
+                document.getElementById('btn_'+id).innerHTML='Voir plus';
+        }
+        return true;
+   } 
+  </script>
 </body>
 </html>
