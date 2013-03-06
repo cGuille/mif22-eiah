@@ -12,22 +12,22 @@
         <!--<script src="lib/backbone-bin.js"></script>-->
         <script src="../../src/main.js"></script>
         <script>
-	function allowDrop(ev)
-	{
-		ev.preventDefault();
-	}
+          function allowDrop(ev)
+          {
+                  ev.preventDefault();
+          }
 
-	function drag(ev)
-	{
-		ev.dataTransfer.setData("Text",ev.target.id);
-	}
+          function drag(ev)
+          {
+                  ev.dataTransfer.setData("Text",ev.target.id);
+          }
 
-	function drop(ev)
-	{
-		ev.preventDefault();
-		var data=ev.dataTransfer.getData("Text");
-		ev.target.appendChild(document.getElementById(data));
-	}
+          function drop(ev)
+          {
+                  ev.preventDefault();
+                  var data=ev.dataTransfer.getData("Text");
+                  ev.target.appendChild(document.getElementById(data));
+          }
 	</script>
 </head>
 
@@ -47,11 +47,6 @@
     <div id="site_content">
       <div class="content">
             <div id="content_box_exo">
-            
-<!--	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-	<br>
-	<img id="drag1" src="images/main.png" draggable="true" ondragstart="drag(event)" width="336" height="69">-->
-	
                 <div id="box_inf" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE INFERIEUR</div>
                 <div id="box_sup" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE SUPERIEUR</div>
           	<button type="button" class="btn">Valider</button><br/>
@@ -66,12 +61,12 @@
               <div id="item7" class="drag" draggable="true" ondragstart="drag(event)">phalanges</div>
               <div id="item8" class="drag" draggable="true" ondragstart="drag(event)">omoplate</div>
               <div id="item9" class="drag" draggable="true" ondragstart="drag(event)">fémur</div>
-              <!--<div id="item">tibia</div>
-              <div id="item">péroné</div>
-              <div id="item">tarse</div>
-              <div id="item">phalanges</div>
-              <div id="item">rotule</div>
-              <div id="item">metatarse</div>-->
+              <div id="item10" class="drag" draggable="true" ondragstart="drag(event)">tibia</div>
+              <div id="item11" class="drag" draggable="true" ondragstart="drag(event)">péroné</div>
+              <div id="item12" class="drag" draggable="true" ondragstart="drag(event)">tarse</div>
+              <div id="item13" class="drag" draggable="true" ondragstart="drag(event)">phalanges</div>
+              <div id="item14" class="drag" draggable="true" ondragstart="drag(event)">rotule</div>
+              <div id="item15" class="drag" draggable="true" ondragstart="drag(event)"">metatarse</div>
             </div>
 <!--
 - membre supérieure :
