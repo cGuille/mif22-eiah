@@ -1,0 +1,17 @@
+.item {
+  display: inline-block;
+  min-width: 100px;
+  min-height: 40px;
+}
+
+span.draggable {
+  border: 1px dashed black;
+}
+
+span.droppable {
+  border: 1px solid black
+}
+
+.highlight {
+    background-color: rgba(0, 0, 0, 0.25);
+}

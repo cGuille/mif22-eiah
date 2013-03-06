@@ -4,3 +4,6 @@
 .response > input:hover, .response > label:hover {
     background-color: rgba(0, 0, 0, 0.25);
 }
+dl.question + button {
+    cursor: pointer;
+}

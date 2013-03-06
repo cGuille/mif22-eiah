@@ -6,7 +6,7 @@
         id: "qcm-digestif",
         buttonLabel: "Vérifier",
         shuffle: true,
-        description: "<p>Pendant la digestion ,l'&eacute;piglotte s'abaisse, la glotte se releve ce qui ferme la trach&eacute;e</p><p>Les enzimes qui intervienes au niveau de l'intestion sont les peptidases, l'amylase,et les lipases.</p>",
+        description: "<p>Pendant la digestion, l'épiglotte s'abaisse, la glotte se relève ce qui ferme la trachée<br />Les enzimes qui interviennent au niveau de l'intestin sont les peptidases, l'amylase, et les lipases.</p>",
         questions: [{
             label: "Quelle(s) voie(s) suivent les aliments absorbés qui ont traversé les villosités intestinales ?",
             responses: [
@@ -15,14 +15,14 @@
                 "Les voies sanguine et lymphatique"
             ],
             anwsers: ["Les voies sanguine et lymphatique"]
-        }, {
+        }/*, {
             label: "Quel est le nombre de glandes salivaires ?",
             responses: [
-                "1",
-                "2",
-                "3"
+                "une",
+                "deux",
+                "trois"
             ],
-            anwsers: ["3"]
+            anwsers: ["trois"]
         }, {
             label: "À quelle partie du tube digestif appartiennent le duodénum, le jéjunum et l'iléon ?",
             responses: [
@@ -87,15 +87,48 @@
                 "L'absorption"
             ],
             anwsers: ["L'absorption"]
-        }, ]
+        }*/]
     };
     
     $(function () {
         var qcm = new Mcq(qcmData),
-            writer = new McqHtmlWriter(qcm, function onError(errors) {
-                console.log(errors);
-            }, function onCheck(result) {
-                console.log(result);
+            writer = new McqHtmlWriter(qcm, function onError(error) {
+                if (error.message === 'not_all_checked') {
+                    var qcmElt = $('#qcm');
+
+                    qcmElt.find('.question').each(function () {
+                        var questionElt = $(this),
+                            questionIndex = +questionElt.attr('data-question-index');
+
+                        if (_(error.notChecked).contains(questionIndex)) {
+                            questionElt.find('.question-label').addClass('required');
+                        } else {
+                            questionElt.find('.question-label').removeClass('required');
+                        }
+                    });
+                }
+            }, function onCheck(results) {
+                console.log(results);
+                $('#qcm .question-label').removeClass('required');
+                
+                $('#qcm .question').each(function () {
+                    var questionElt = $(this),
+                        questionIndex = +questionElt.attr('data-question-index');
+
+                    questionElt.find('.response').each(function () {
+                        var responseElt = $(this),
+                            responseLbl = responseElt.find('label').text(),
+                            checkedElt = responseElt.find('input:checked');
+
+                        if (checkedElt.length) {
+                            if ()
+                        }
+                    });
+                    if (results[questionIndex])
+                });
+
+                // _(results).each(function (question) {
+                // });
             });
         writer.write($('#qcm'));
     });
