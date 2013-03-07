@@ -6,7 +6,7 @@
     // console.log('underscore:' + _);
 
     if (!storage.profiles) {
-        storage.profiles = {};
+        storage.profiles = JSON.stringify({});
     }
 
     var appState = new Backbone.Model({
@@ -18,8 +18,16 @@
         storage.page = appState.get('page');
     });
     appState.get('profile').on('change', function () {
+        var name = appState.get('profile').get('name'),
+            profiles = JSON.parse(storage.profiles);
+
         storage.profile = JSON.stringify(appState.get('profile'));
-        storage.profiles[appState.get('profile').get('name')] = storage.profile;
+
+        if (name) {
+            profiles[name] = storage.profile;
+            storage.profiles = JSON.stringify(profiles);
+            console.log('profiles updated', profiles);
+        }
     });
 
     function reset() {
@@ -82,6 +90,7 @@
                 break;
             case 'themes':
                 $('body').html(pages[page](profile));
+                $('header').on('click', reset);// debuging, must be removed
                 $('.box').on('click', chooseTheme);
                 break;
             default:
