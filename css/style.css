@@ -100,6 +100,10 @@ nav {
   margin: 0 auto 0 auto;
 }
 
+.disconnect {
+  cursor: pointer;
+}
+
 #site_content { 
   width: 930px;
   overflow: hidden;

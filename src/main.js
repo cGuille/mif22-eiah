@@ -26,7 +26,6 @@
         if (name) {
             profiles[name] = storage.profile;
             storage.profiles = JSON.stringify(profiles);
-            console.log('profiles updated', profiles);
         }
     });
 
@@ -90,13 +89,15 @@
                 break;
             case 'themes':
                 $('body').html(pages[page](profile));
-                $('header').on('click', reset);// debuging, must be removed
                 $('.box').on('click', chooseTheme);
                 break;
             default:
                 console.error('unknown page `' + page + '`');
                 break;
         }
+
+        // On every pages:
+        $('.disconnect').on('click', reset);
     });
 
     $(function () {
