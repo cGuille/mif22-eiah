@@ -24,7 +24,7 @@
         storage.profile = JSON.stringify(appState.get('profile'));
 
         if (name) {
-            profiles[name] = storage.profile;
+            profiles[name] = appState.get('profile');
             storage.profiles = JSON.stringify(profiles);
         }
     });
