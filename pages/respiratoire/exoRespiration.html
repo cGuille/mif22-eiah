@@ -11,6 +11,7 @@
         <script src="../../lib/backbone-dev.js"></script>
         <!--<script src="lib/backbone-bin.js"></script>-->
         <script src="../../src/main.js"></script>
+
         <script>
           function allowDrop(ev)
           {
@@ -28,6 +29,49 @@
                   var data=ev.dataTransfer.getData("Text");
                   ev.target.appendChild(document.getElementById(data));
           }
+
+          function validation()
+          {
+            var error = 0;
+            var child = document.getElementById('box_sup').childNodes;
+            var nb = child.length;
+            for(var i = 0; i < nb; i++){
+              if(child[i].nodeType==1){
+                //alert(child[i].nodeType +"/"+ child[i].childNodes[0].nodeValue);
+                var id = child[i].getAttribute('id');//recup l'id de la div
+                  if(id=="item1" || id=="item2" || id=="item3" || id=="item4" || id=="item5" || id=="item6" || id=="item7" || id=="item8"|| id=="item13"){ 
+                    document.getElementById(id).style.color='green';//modif la couleur de l'element
+                  }
+                  else{
+                    document.getElementById(id).style.color='red';//modif la couleur de l'element
+                    error += 1;
+                  }
+                }else{//main div
+                //alert(child[i].nodeType +"-"+ child[i].nodeValue);
+                }
+            child[i].draggable = false;
+            }
+
+            var child_inf = document.getElementById('box_inf').childNodes;
+            var nb = child_inf.length;
+            for(var i = 0; i < nb; i++){
+              if(child_inf[i].nodeType==1){
+                //alert(child_inf[i].nodeType +"/"+ child_inf[i].childNodes[0].nodeValue);
+                var id = child_inf[i].getAttribute('id');//recup l'id de la div
+                  if(id=="item9" || id=="item10" || id=="item11" || id=="item12" || id=="item13" || id=="item14" || id=="item15" || id=="item7"){ 
+                    document.getElementById(id).style.color='green';//modif la couleur de l'element
+                  }
+                  else{
+                    document.getElementById(id).style.color='red';//modif la couleur de l'element
+                    error += 1;
+                  }
+                }else{//main div
+                //alert(child[i].nodeType +"-"+ child[i].nodeValue);
+                }
+            child_inf[i].draggable = false;
+            }
+            alert(error);
+          }
 	</script>
 </head>
 
@@ -36,8 +80,6 @@
     <header>
       <div id="logo">
         <div id="logo_text">
-          <!--<h1>MIF22</h1>
-          <h2>Logiciels éducatifs</h2>-->
         </div>
       </div>
       <nav>
@@ -49,7 +91,7 @@
             <div id="content_box_exo">
                 <div id="box_inf" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE INFERIEUR</div>
                 <div id="box_sup" class="box_exo"  ondrop="drop(event)" ondragover="allowDrop(event)">MEMBRE SUPERIEUR</div>
-          	<button type="button" class="btn">Valider</button><br/>
+          	<button type="button" class="btn" onclick="validation()">Valider</button><br/>
             </div>
             <div id="evaluation">
               <div id="item1" class="drag" draggable="true" ondragstart="drag(event)">cubitus</div>
@@ -66,27 +108,8 @@
               <div id="item12" class="drag" draggable="true" ondragstart="drag(event)">tarse</div>
               <div id="item13" class="drag" draggable="true" ondragstart="drag(event)">phalanges</div>
               <div id="item14" class="drag" draggable="true" ondragstart="drag(event)">rotule</div>
-              <div id="item15" class="drag" draggable="true" ondragstart="drag(event)"">metatarse</div>
+              <div id="item15" class="drag" draggable="true" ondragstart="drag(event)">metatarse</div>
             </div>
-<!--
-- membre supérieure :
-cubitus
-clavicule
-métacarpe
-radius
-humérus
-carpe
-phalanges
-omoplate
-- membre inférieure :
-fémur
-tibia
-péroné
-tarse
-phalanges
-rotule
-metatarse
--->
       </div>
     </div>
         

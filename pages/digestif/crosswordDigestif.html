@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <title></title>
+        <script src="../../lib/underscore-dev.js"></script>
+        <!--<script src="lib/underscore-bin.js"></script>-->
+        <script src="../../lib/jquery-1.9.1-dev.js"></script>
+        <!--<script src="lib/jquery-1.9.1-bin.js"></script>-->
+        <script src="../../lib/backbone-dev.js"></script>
+        <!--<script src="lib/backbone-bin.js"></script>-->
+        <script src="../../src/main.js"></script>
+		<script src="../../src/crosswordD.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!--<h1>MIF22</h1>
+          <h2>Logiciels éducatifs</h2>-->
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container"></div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="content">
+<!-- mots croises-->
+			<div id="MainDiv" class="StdDiv">
+			<div id="ClueEntry"></div>
+			    <table class="CrosswordGrid">
+				<tbody>
+
+				<tr id="Row_0"><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(1,0,0)">1</a><span class="NumLetterCellText" id="L_0_0" onclick="ShowClue(1,0,0)">&nbsp;&nbsp;&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_1">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_2">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_3">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_4">&nbsp;</span></td><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(2,0,5)">2</a><span class="NumLetterCellText" id="L_0_5" onclick="ShowClue(2,0,5)">&nbsp;&nbsp;&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_6">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_7">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_8">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_9">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_0_10">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_1"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_1_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_2"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_2_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_3"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(3,3,4)">3</a><span class="NumLetterCellText" id="L_3_4" onclick="ShowClue(3,3,4)">&nbsp;&nbsp;&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_3_5">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_3_6">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_3_7">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_3_8">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_3_9">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_4"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(4,4,2)">4</a><span class="NumLetterCellText" id="L_4_2" onclick="ShowClue(4,4,2)">&nbsp;&nbsp;&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_4_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(5,4,11)">5</a><span class="NumLetterCellText" id="L_4_11" onclick="ShowClue(5,4,11)">&nbsp;&nbsp;&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_5"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_5_2">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(6,5,5)">6</a><span class="NumLetterCellText" id="L_5_5" onclick="ShowClue(6,5,5)">&nbsp;&nbsp;&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_6">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_7">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_8">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_9">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_10">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_11">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_12">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_5_13">&nbsp;</span></td></tr><tr id="Row_6"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_6_2">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_6_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_6_11">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_7"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_7_2">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_7_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_7_11">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_8"><td class="NumLetterCell"><a href="javascript:void(0);" class="GridNum" onclick="ShowClue(7,8,0)">7</a><span class="NumLetterCellText" id="L_8_0" onclick="ShowClue(7,8,0)">&nbsp;&nbsp;&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_1">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_2">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_3">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_4">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_5">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_6">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_7">&nbsp;</span></td><td class="LetterOnlyCell"><span id="L_8_8">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_8_11">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_9"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_9_2">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_9_5">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_9_11">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr><tr id="Row_10"><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td><td class="LetterOnlyCell"><span id="L_10_11">&nbsp;</span></td><td class="BlankCell">&nbsp;</td><td class="BlankCell">&nbsp;</td></tr>
+
+				</tbody>
+				</table>
+
+				<button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Vérifier&nbsp;</button>
+
+				<table id="Clues" style="display: none;">
+				<tbody>
+				<tr>
+				<td>
+
+				<table class="ClueList">
+				<tbody id="CluesAcross">
+				<tr><td colspan="2"><h3 class="ExerciseSubtitle" id="CluesAcrossLabel">Horizontal:</h3></td></tr>
+
+				<tr><td class="ClueNum">1. </td><td id="Clue_A_1" class="Clue">Quelle voie suit les aliments absorb&#x00E9;s qui ont travers&#x00E9; les villosit&#x00E9;s intestinales.</td></tr><tr><td class="ClueNum">3. </td><td id="Clue_A_3" class="Clue">O&#x00F9; sont situ&#x00E9;es les glandes salivaires?</td></tr><tr><td class="ClueNum">6. </td><td id="Clue_A_6" class="Clue">Quel est le nom de la membrane qui entoure les organes digestifs?</td></tr><tr><td class="ClueNum">7. </td><td id="Clue_A_7" class="Clue">Qu'est-ce qui permet la fermeture de la trach&#x00E9;e pendant la d&#x00E9;glutition ?</td></tr>
+
+				</tbody>
+				</table>
+
+			</td>
+
+			<td>
+
+			<table class="ClueList">
+			<tbody id="CluesDown">
+			<tr><td colspan="2"><h3 class="ExerciseSubtitle" id="CluesDownLabel">Vertical:</h3></td></tr>
+
+			<tr><td class="ClueNum">2. </td><td id="Clue_D_2" class="Clue">Comment appelle-t-on le passage des aliments dig&#x00E9;r&#x00E9;s dans la circulation sanguine ?</td></tr><tr><td class="ClueNum">4. </td><td id="Clue_D_4" class="Clue">Par quel orifice l'&#x0153;sophage p&#x00E9;n&#x00E8;tre-t-il dans l'estomac?</td></tr><tr><td class="ClueNum">5. </td><td id="Clue_D_5" class="Clue">Quelles sont les enzymes qui interviennent au niveau de l'intestin?</td></tr>
+
+			</tbody>
+			</table>
+
+			</td>
+			</tr>
+			</tbody>
+			</table>
+
+			</div>
+
+			<div class="Feedback" id="FeedbackDiv">
+			<div class="FeedbackText" id="FeedbackContent"></div>
+			<button id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+			</div>
+      </div>
+    </div>
+    
+    <footer>
+     <!-- <p>Copyright &copy; 2013</p>-->
+    </footer>
+    
+  </div>
+  <p>&nbsp;</p>
+</body>
+</html>
