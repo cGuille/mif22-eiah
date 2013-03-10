@@ -41,7 +41,18 @@ a:hover {
 }
 
 img{
-  margin-left:25%;
+  float:left;
+  margin: 30px 20px 0 0;
+}
+
+.img_right{
+  float:right;
+  margin: 30px 20px 0 0;
+}
+
+.img_center{
+  text-align:center;
+  margin: 30px 20px 0 225px;
 }
 #main, nav, #container, #logo, #site_content, footer { 
   margin-left: auto; 
@@ -126,7 +137,7 @@ nav {
 }
 
 .box { 
-        float: left; 
+       /* float: left; */
         width: 230px; 
         height: 40px; 
         padding: 20px; 
@@ -153,6 +164,20 @@ nav {
       width: 95px;
 }
 
+/* 3 divs */
+div#colonne1 {
+	float: left;
+	width: 300px;
+	margin-right: 10px;
+}
+div#colonne2 {
+	float: right;
+	width: 300px;
+	margin-left: 10px;
+}
+div#centre {
+	overflow: hidden;
+}
 #evaluation { 
   width: 925px;
   padding: 5px 0 20px 0;
@@ -188,20 +213,12 @@ nav {
  /* width: 630px;*/
   margin: 0 0 15px 0;
   float: left;
-  font-size: 120%;
+  font-size: 110%;
   padding: 14px 0 0 0;
 }
-  
-.content ul { 
-  margin: 2px 0 22px 0px;
-}
 
-.content ul li{ 
-  list-style-type: none;
-  background: url(../images/bullet.png) no-repeat;
-  margin: 0 0 0 0; 
-  padding: 0 0 4px 28px;
-  line-height: 1.5em;
+.content li{ 
+  margin: 15px;
 }
 
 /* Fichier CSS */
@@ -456,6 +473,7 @@ td.Clue{
 div#ClueEntry{
 	text-align: left;
 	margin-bottom: 1em;
+	width: 900px;
 }
 
 /* #end crossword */
