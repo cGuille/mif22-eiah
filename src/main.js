@@ -97,6 +97,7 @@
         }
 
         // On every pages:
+        $('.back-home').on('click', appState.set.bind(appState, 'page', 'themes'));
         $('.disconnect').on('click', reset);
     });
 
