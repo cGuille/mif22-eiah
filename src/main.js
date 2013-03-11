@@ -6,7 +6,7 @@
     // console.log('underscore:' + _);
 
     if (!storage.profiles) {
-        storage.profiles = JSON.stringify({});
+        storage.profiles = '{}';
     }
 
     var appState = new Backbone.Model({
@@ -22,7 +22,7 @@
     });
     appState.get('profile').on('change', function () {
         var name = appState.get('profile').get('name'),
-            profiles = {};
+            profiles = JSON.parse(storage.profiles);
 
         storage.profile = JSON.stringify(appState.get('profile'));
 
