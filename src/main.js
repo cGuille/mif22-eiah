@@ -30,7 +30,6 @@
             profiles[name] = appState.get('profile');
             storage.profiles = JSON.stringify(profiles);
         }
-        console.log('stored profiles', JSON.parse(storage.profiles)); // debug
     });
 
     function reset() {
@@ -70,14 +69,14 @@
 
         retrievedProfile = profiles[userData.name];
 
-        // if (retrievedProfile) {
-        //     appState.get('profile').set(retrievedProfile);
-        //     if (retrievedProfile.page) {
-        //         landingPage = retrievedProfile.page;
-        //     }
-        // } else {
+        if (retrievedProfile) {
+            appState.get('profile').set(retrievedProfile);
+            if (retrievedProfile.page) {
+                landingPage = retrievedProfile.page;
+            }
+        } else {
             appState.get('profile').set(userData);
-        // }
+        }
         appState.set('page', landingPage);
 
         return false;
