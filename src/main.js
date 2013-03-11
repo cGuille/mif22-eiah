@@ -22,7 +22,7 @@
     });
     appState.get('profile').on('change', function () {
         var name = appState.get('profile').get('name'),
-            profiles = JSON.parse(storage.profiles);
+            profiles = {};
 
         storage.profile = JSON.stringify(appState.get('profile'));
 
@@ -88,6 +88,8 @@
 
         switch (theme) {
             case 'Os':
+            case 'Digestif': 
+            case 'Respiratoire':
                 appState.set('page', 'cours' + theme);
                 break;
             default:
@@ -136,6 +138,8 @@
                 $('.cours-btn').on('click', goCours);
                 break;
             case 'coursOs':
+            case 'coursDigestif':  
+            case 'coursRespiratoire':  
                 $('body').html(pages[page](profile));
                 break;
             default:
