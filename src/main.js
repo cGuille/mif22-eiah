@@ -66,6 +66,7 @@
         retrievedProfile = profiles[userData.name];
 
         if (retrievedProfile) {
+            retrievedProfile.level = userData.level; // We allow the user choose to change his level
             appState.get('profile').set(retrievedProfile);
             if (retrievedProfile.page) {
                 landingPage = retrievedProfile.page;
