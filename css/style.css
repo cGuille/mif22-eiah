@@ -111,7 +111,7 @@ nav {
   margin: 0 auto 0 auto;
 }
 
-.back-home, .disconnect {
+.back-home, .disconnect, .cours-btn {
   cursor: pointer;
 }
 

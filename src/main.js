@@ -66,12 +66,15 @@
         return false;
     }
 
-    function chooseTheme() {
-        var theme = $(this).text();
+    function goCours() {
+        var theme = $(this).attr('id');
 
         switch (theme) {
+            case 'Os':
+                appState.set('page', 'cours' + theme);
+                break;
             default:
-                console.error('The theme "' + theme + '" is not implemented.');
+                console.error('The course "' + theme + '" is not implemented (yet?).');
                 break;
         }
         window.alert('Aller à la page du theme: « ' + theme + ' »');
@@ -89,7 +92,10 @@
                 break;
             case 'themes':
                 $('body').html(pages[page](profile));
-                $('.box').on('click', chooseTheme);
+                $('.cours-btn').on('click', goCours);
+                break;
+            case 'coursOs':
+                $('body').html(pages[page](profile));
                 break;
             default:
                 console.error('unknown page `' + page + '`');
