@@ -11,11 +11,14 @@
 
     var appState = new Backbone.Model({
             page: '',
-            profile: new Backbone.Model()
+            pageTime: 0,
+            profile: new Backbone.Model({
+                visitedPages: {}
+            })
         });
 
-    appState.on('change:page', function () {
-        storage.page = appState.get('page');
+    appState.on('change:page', function (state, page) {
+        state.get('profile').set('page', page)
     });
     appState.get('profile').on('change', function () {
         var name = appState.get('profile').get('name'),
@@ -27,9 +30,11 @@
             profiles[name] = appState.get('profile');
             storage.profiles = JSON.stringify(profiles);
         }
+        console.log('stored profiles', JSON.parse(storage.profiles)); // debug
     });
 
     function reset() {
+        savePageVisit(appState.get('page'));
         appState.get('profile').clear();
         appState.set('page', 'home');
     }
@@ -38,10 +43,13 @@
 
 
     function onIdentification() {
-        var userData = {
+        var landingPage = 'themes',
+            profiles = JSON.parse(storage.profiles),
+            userData = {
                 name: $(this).find('[name=firstname]').val().trim(),
                 level: $(this).find('[name=level]:checked').attr('value')
-            };
+            },
+            retrievedProfile;
 
         $('label[for=firstname]').removeClass('validation-error');
         $('label[for=primaire], label[for=college]').removeClass('validation-error');
@@ -60,8 +68,17 @@
             return false;
         }
 
-        appState.get('profile').set(userData);
-        appState.set('page', 'themes');
+        retrievedProfile = profiles[userData.name];
+
+        // if (retrievedProfile) {
+        //     appState.get('profile').set(retrievedProfile);
+        //     if (retrievedProfile.page) {
+        //         landingPage = retrievedProfile.page;
+        //     }
+        // } else {
+            appState.get('profile').set(userData);
+        // }
+        appState.set('page', landingPage);
 
         return false;
     }
@@ -77,12 +94,36 @@
                 console.error('The course "' + theme + '" is not implemented (yet?).');
                 break;
         }
-        window.alert('Aller à la page du theme: « ' + theme + ' »');
+    }
+
+    function savePageVisit(page) {
+        // console.log('savePageVisit called');
+        var visitedPages = appState.get('profile').get('visitedPages'),
+            previousPageInitTime = +appState.get('pageInitTime'),
+            previousPageTimeElapsed = (+new Date()) - previousPageInitTime;
+        
+        if (!page || !visitedPages || !previousPageInitTime) {
+            // console.error('page:', page);
+            // console.error('visitedPages:', visitedPages);
+            // console.error('previousPageInitTime:', previousPageInitTime);
+            return;
+        }
+
+        if (!visitedPages[page]) {
+            visitedPages[page] = { visits: 0, timeElapsed: 0 };
+        }
+        visitedPages[page].visits += 1;
+        visitedPages[page].timeElapsed += previousPageTimeElapsed;
+        appState.get('profile').trigger('change');
+        // console.log('visitedPages updated for ' + appState.get('profile').get('name'), visitedPages);
+        // console.log('storage.profiles:', JSON.parse(storage.profiles));
     }
 
     appState.on('change:page', function (state, page) {
         var previousPage = state.previous('page'),
             profile = appState.get('profile');
+
+        savePageVisit(previousPage);
 
         switch (page) {
             case 'home':
@@ -105,10 +146,12 @@
         // On every pages:
         $('.back-home').on('click', appState.set.bind(appState, 'page', 'themes'));
         $('.disconnect').on('click', reset);
+        appState.set('pageInitTime', +new Date());
     });
 
     $(function () {
-        var page = 'home';
+        var page = 'home',
+            profiles = JSON.parse(storage.profiles);
 
         if (storage.page && storage.profile) {
             page = storage.page;
