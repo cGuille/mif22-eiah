@@ -141,6 +141,10 @@
             case 'coursDigestif':  
             case 'coursRespiratoire':  
                 $('body').html(pages[page](profile));
+                if (appState.get('profile').get('level') === 'college') {
+                    see_more('texte');
+                    $('.see-more').css('display', 'none');
+                }
                 break;
             default:
                 console.error('unknown page `' + page + '`');
