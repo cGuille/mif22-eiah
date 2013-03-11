@@ -1,10 +1,6 @@
 (function (Backbone, $, _, storage, pages) {
     'use strict';
 
-    // console.log('backbone: ' + Backbone);
-    // console.log('jquery: ' + $);
-    // console.log('underscore:' + _);
-
     if (!storage.profiles) {
         storage.profiles = '{}';
     }
@@ -98,7 +94,6 @@
     }
 
     function savePageVisit(page) {
-        // console.log('savePageVisit called');
         var visitedPages = appState.get('profile').get('visitedPages'),
             previousPageInitTime = +appState.get('pageInitTime'),
             previousPageTimeElapsed = (+new Date()) - previousPageInitTime;
@@ -116,8 +111,6 @@
         visitedPages[page].visits += 1;
         visitedPages[page].timeElapsed += previousPageTimeElapsed;
         appState.get('profile').trigger('change');
-        // console.log('visitedPages updated for ' + appState.get('profile').get('name'), visitedPages);
-        // console.log('storage.profiles:', JSON.parse(storage.profiles));
     }
 
     appState.on('change:page', function (state, page) {
