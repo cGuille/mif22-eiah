@@ -115,6 +115,13 @@ nav {
   cursor: pointer;
 }
 
+.small_box.good {
+  background-color: #292;
+}
+.small_box.bad {
+  background-color: #922;
+}
+
 #site_content { 
   width: 930px;
   overflow: hidden;
