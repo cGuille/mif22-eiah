@@ -49,12 +49,6 @@
 
 var C = new Client();
 
-//for (prop in C){
-//	alert(prop + ': ' + C[prop]);
-//}
-
-
-
 //CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
 
 //[strNavBarJS]
@@ -167,6 +161,8 @@ function ShowElements(Show, TagName, ContainerToReverse){
 	}
 }
 
+
+
 function HideFeedback(){
 	document.getElementById('FeedbackDiv').style.display = 'none';
 	ShowElements(true, 'input');
@@ -176,6 +172,7 @@ function HideFeedback(){
 		Finish();
 	}
 }
+
 
 //GENERAL UTILITY FUNCTIONS AND VARIABLES
 
@@ -310,6 +307,7 @@ function Shuffle(InArray){
 	return InArray;
 }
 
+
 function EscapeDoubleQuotes(InString){
 	return InString.replace(/"/g, '&quot;')
 }
@@ -388,7 +386,6 @@ function Array_IndexOf(Input){
 }
 Array.prototype.indexOf = Array_IndexOf;
 
-
 //HOTPOTNET-RELATED CODE
 
 var HPNStartTime = (new Date()).getTime();
@@ -406,7 +403,6 @@ function Finish(){
 		Frm.submit();
 	}
 }
-
 
 //JCROSS CORE JAVASCRIPT CODE
 
@@ -610,45 +606,54 @@ function ShowHint(Across,ClueNum,x,y,BoxId){
 }
 
 L = new Array();
-L[0] = new Array('L','Y','M','P','H','A','T','I','Q','U','E','','','');
-L[1] = new Array('','','','','','B','','','','','','','','');
-L[2] = new Array('','','','','','S','','','','','','','','');
-L[3] = new Array('','','','','B','O','U','C','H','E','','','','');
-L[4] = new Array('','','C','','','R','','','','','','L','','');
-L[5] = new Array('','','A','','','P','E','R','I','T','O','I','N','E');
-L[6] = new Array('','','R','','','T','','','','','','P','','');
-L[7] = new Array('','','D','','','I','','','','','','A','','');
-L[8] = new Array('E','P','I','G','L','O','T','T','E','','','S','','');
-L[9] = new Array('','','A','','','N','','','','','','E','','');
-L[10] = new Array('','','','','','','','','','','','S','','');
+L[0] = new Array('','','C','','','','','','');
+L[1] = new Array('','','Y','','','','','','');
+L[2] = new Array('','','P','','','','','','');
+L[3] = new Array('','','H','','','','','P','');
+L[4] = new Array('S','C','O','L','I','O','S','E','');
+L[5] = new Array('','','S','','','','','R','');
+L[6] = new Array('','','E','','','','','I','');
+L[7] = new Array('','','','','','','','O','');
+L[8] = new Array('M','E','T','A','T','A','R','S','E');
+L[9] = new Array('','','','','','','','T','');
+L[10] = new Array('','','','','','','','I','');
+L[11] = new Array('','','','','','','','Q','');
+L[12] = new Array('','','C','U','B','I','T','U','S');
+L[13] = new Array('','','','','','','','E','');
 
 
 CL = new Array();
-CL[0] = new Array(1,0,0,0,0,2,0,0,0,0,0,0,0,0);
-CL[1] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[2] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[3] = new Array(0,0,0,0,3,0,0,0,0,0,0,0,0,0);
-CL[4] = new Array(0,0,4,0,0,0,0,0,0,0,0,5,0,0);
-CL[5] = new Array(0,0,0,0,0,6,0,0,0,0,0,0,0,0);
-CL[6] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[7] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[8] = new Array(7,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[9] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-CL[10] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+CL[0] = new Array(0,0,1,0,0,0,0,0,0);
+CL[1] = new Array(0,0,0,0,0,0,0,0,0);
+CL[2] = new Array(0,0,0,0,0,0,0,0,0);
+CL[3] = new Array(0,0,0,0,0,0,0,2,0);
+CL[4] = new Array(3,0,0,0,0,0,0,0,0);
+CL[5] = new Array(0,0,0,0,0,0,0,0,0);
+CL[6] = new Array(0,0,0,0,0,0,0,0,0);
+CL[7] = new Array(0,0,0,0,0,0,0,0,0);
+CL[8] = new Array(4,0,0,0,0,0,0,0,0);
+CL[9] = new Array(0,0,0,0,0,0,0,0,0);
+CL[10] = new Array(0,0,0,0,0,0,0,0,0);
+CL[11] = new Array(0,0,0,0,0,0,0,0,0);
+CL[12] = new Array(0,0,5,0,0,0,0,0,0);
+CL[13] = new Array(0,0,0,0,0,0,0,0,0);
 
 
 G = new Array();
-G[0] = new Array('','','','','','','','','','','','','','');
-G[1] = new Array('','','','','','','','','','','','','','');
-G[2] = new Array('','','','','','','','','','','','','','');
-G[3] = new Array('','','','','','','','','','','','','','');
-G[4] = new Array('','','','','','','','','','','','','','');
-G[5] = new Array('','','','','','','','','','','','','','');
-G[6] = new Array('','','','','','','','','','','','','','');
-G[7] = new Array('','','','','','','','','','','','','','');
-G[8] = new Array('','','','','','','','','','','','','','');
-G[9] = new Array('','','','','','','','','','','','','','');
-G[10] = new Array('','','','','','','','','','','','','','');
+G[0] = new Array('','','','','','','','','');
+G[1] = new Array('','','','','','','','','');
+G[2] = new Array('','','','','','','','','');
+G[3] = new Array('','','','','','','','','');
+G[4] = new Array('','','','','','','','','');
+G[5] = new Array('','','','','','','','','');
+G[6] = new Array('','','','','','','','','');
+G[7] = new Array('','','','','','','','','');
+G[8] = new Array('','','','','','','','','');
+G[9] = new Array('','','','','','','','','');
+G[10] = new Array('','','','','','','','','');
+G[11] = new Array('','','','','','','','','');
+G[12] = new Array('','','','','','','','','');
+G[13] = new Array('','','','','','','','','');
 
 
 function CheckAnswers(){
@@ -659,6 +664,7 @@ function CheckAnswers(){
 	var CorrectLetters = 0;
 	var LetterFromKey = ''; 
 	var LetterFromGuess = '';
+	
 //Check each letter
 	for (var i=0; i<L.length; i++){
 		for (var j=0; j<L[i].length; j++){
@@ -711,7 +717,7 @@ function CheckAnswers(){
 		Finished = true;
 		setTimeout('Finish()', SubmissionTimeout);
 	}
-//alert(Score);
+
 }
 
 function Finish(){
@@ -730,3 +736,74 @@ function TypeChars(Chars){
 		CurrentBox.value += Chars;
 	}
 }
+
+/* drag and drop exos */
+
+          function allowDrop(ev)
+          {
+                  if(ev.target.id=="box_inf" || ev.target.id=="box_sup"){
+                                        ev.preventDefault();
+                                  }
+          }
+
+          function drag(ev)
+          {
+                  ev.dataTransfer.setData("Text",ev.target.id);
+          }
+
+          function drop(ev)
+          {
+                  ev.preventDefault();
+                  var data=ev.dataTransfer.getData("Text");
+                  ev.target.appendChild(document.getElementById(data));
+                                  
+          }
+
+          function validation()
+          {
+            var error = 0;
+            var child = document.getElementById('box_sup').childNodes;
+            var nb = child.length;
+            for(var i = 0; i < nb; i++){
+              if(child[i].nodeType==1){
+                //alert(child[i].nodeType +"/"+ child[i].childNodes[0].nodeValue);
+                var id = child[i].getAttribute('id');//recup l'id de la div
+                  if(id=="item1" || id=="item2" || id=="item3" || id=="item4" || id=="item5" || id=="item6" || id=="item7" || id=="item8"|| id=="item13"){ 
+                    document.getElementById(id).style.color='green';//modif la couleur de l'element
+                  }
+                  else{
+                    document.getElementById(id).style.color='red';//modif la couleur de l'element
+                    error += 1;
+                  }
+                }else{//main div
+                //alert(child[i].nodeType +"-"+ child[i].nodeValue);
+                }
+            child[i].draggable = false;
+            }
+
+            var child_inf = document.getElementById('box_inf').childNodes;
+            var nb = child_inf.length;
+            for(var i = 0; i < nb; i++){
+              if(child_inf[i].nodeType==1){
+                //alert(child_inf[i].nodeType +"/"+ child_inf[i].childNodes[0].nodeValue);
+                var id = child_inf[i].getAttribute('id');//recup l'id de la div
+                  if(id=="item9" || id=="item10" || id=="item11" || id=="item12" || id=="item13" || id=="item14" || id=="item15" || id=="item7"){ 
+                    document.getElementById(id).style.color='green';//modif la couleur de l'element
+                  }
+                  else{
+                    document.getElementById(id).style.color='red';//modif la couleur de l'element
+                    error += 1;
+                  }
+                }else{//main div
+                //alert(child[i].nodeType +"-"+ child[i].nodeValue);
+                }
+            child_inf[i].draggable = false;
+            }
+            //alert(error);
+                        if (confirm("Tu as fait "+error+" erreurs!\n[Ok] = Exercice suivant\n[Annuler] = Retour aux thèmes")){
+                                //document.location.href='...';
+                        }
+                        else{
+                                //document.location.href='...';
+                        }
+          }
