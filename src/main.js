@@ -18,6 +18,9 @@
         state.get('profile').set('page', page)
     });
     appState.get('profile').on('change', function () {
+        if (!storage.profiles) {
+            storage.profiles = '{}';
+        }
         var name = appState.get('profile').get('name'),
             profiles = JSON.parse(storage.profiles);
 
