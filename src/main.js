@@ -138,6 +138,7 @@
             case 'themes':
                 $('body').html(pages[page](profile));
                 evaluate();
+                guide();
                 $('.cours-btn').on('click', go('cours'));
                 $('.exos-btn').on('click', go('exos'));
                 break;
@@ -209,6 +210,38 @@
         });
     }
     function evaluateExos() {}
+
+    function guide() {
+        var guideContainer = $('#evaluation'),
+            profile = appState.get('profile'),
+            visitedPages = profile.get('visitedPages'),
+            isFirstConnection = visitedPages ? !visitedPages.themes : false,
+            output = '';
+
+        if (isFirstConnection) {
+            output += '<p>Bienvenue !<br /> Pour bien démarrer, je te conseille d\'aller lire les cours en cliquant sur le bouton "Apprendre" de la catégorie de ton choix.</p>';
+        } else {
+            var wellReadCours = $('.cours-btn.good'),
+                wellReadThemes = [];
+            
+            wellReadCours.parent().each(function () {
+                wellReadThemes.push($($(this).children()[0]).text());
+            });
+
+            if (!_(wellReadThemes).size()) {
+                output = '<p>Bosse, feignasse.</p>';
+            } else {
+                output = '<p>Bravo, je vois que tu as bien travaillé !</p>';
+                if (_(wellReadThemes).size() === 1) {
+                    output += '<p>Pourquoi n\'essaierais-tu pas de tester tes connaissances dans la catégorie "' + wellReadThemes[0] + '" ?</p>';
+                } else {
+                    output += '<p>Pourquoi n\'essaierais-tu pas de tester tes connaissances dans les catégories que tu as bien révisé :<br /> - ' + wellReadThemes.join('<br /> - ');
+                }
+            }
+        }
+
+        guideContainer.html(output);
+    }
 
     $(function () {
         var page = 'home',
