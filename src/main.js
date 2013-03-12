@@ -202,15 +202,61 @@
                     coursBtnElt.addClass('bad');
                 }
             }
-
-            // console.log(fullName + ':');
-            // console.log('  visits:', stats.visits);
-            // console.log('  time elapsed:', stats.timeElapsed);
-            // console.log('  average:', averageTimeElapsed);
-            // console.log('');
         });
     }
-    function evaluateExos() {}
+    function evaluateExos() {
+        var themes = ['Os', 'Respiratoire', 'Digestif'],
+            profile = appState.get('profile'),
+            themesScores = profile.get('scores');
+
+        if (!themesScores) {
+            return;
+        }
+
+        _(themes).each(function (theme) {
+            var delay = 10,
+                fullName = 'exos' + theme,
+                scores = themesScores[fullName];
+
+            if (!scores) {
+                return;
+            }
+
+            var exosBtnElt = $('div[data-theme=' + theme + ']').children('.exos-btn');
+
+            switch (theme) {
+                case 'Os':var lastScore = _(scores).last();
+                    if (lastScore >= 6) {
+                        exosBtnElt.removeClass('good');
+                        exosBtnElt.addClass('bad');
+                    } else {
+                        exosBtnElt.removeClass('bad');
+                        exosBtnElt.addClass('good');
+                    }
+                    break;
+                case 'Respiratoire':
+                    var lastScore = _(scores).last();
+                    if (lastScore >= 4) {
+                        exosBtnElt.removeClass('good');
+                        exosBtnElt.addClass('bad');
+                    } else {
+                        exosBtnElt.removeClass('bad');
+                        exosBtnElt.addClass('good');
+                    }
+                    break;
+                case 'Digestif':
+                    var lastScore = _(scores).last();
+                    if (lastScore < 50) {
+                        exosBtnElt.removeClass('good');
+                        exosBtnElt.addClass('bad');
+                    } else {
+                        exosBtnElt.removeClass('bad');
+                        exosBtnElt.addClass('good');
+                    }
+                    break;
+            }
+        });
+    }
 
     function guide() {
         var guideContainer = $('#evaluation'),
@@ -230,7 +276,7 @@
             });
 
             if (!_(wellReadThemes).size()) {
-                output = '<p>Bosse, feignasse.</p>';
+                output = '<p>Bonjour ! Tu peux cliquer sur "Apprendre" pour lire les cours.</p>';
             } else {
                 output = '<p>Bravo, je vois que tu as bien travaillé !</p>';
                 if (_(wellReadThemes).size() === 1) {
