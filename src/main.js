@@ -143,6 +143,11 @@
                     $('.see-more').css('display', 'none');
                 }
                 break;
+            case 'exosOs':
+            case 'exosDigestif':  
+            case 'exosRespiratoire':  
+                $('body').html(pages[page](profile));
+                break;
             default:
                 console.error('unknown page `' + page + '`');
                 break;
