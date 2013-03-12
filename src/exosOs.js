@@ -800,11 +800,12 @@ function TypeChars(Chars){
             child_inf[i].draggable = false;
             }
             //alert(error);
-            reportScore(error);
+           // reportScore(error);
                         if (confirm("Tu as fait "+error+" erreurs!\n[Ok] = Continuer\n[Annuler] = Retour aux thèmes")){
                                 //document.location.href='...';
                         }
                         else{
                                 //document.location.href='...';
+                                appState.set('page', 'themes');
                         }
           }
