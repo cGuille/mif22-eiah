@@ -9,7 +9,8 @@
             page: '',
             pageTime: 0,
             profile: new Backbone.Model({
-                visitedPages: {}
+                visitedPages: {},
+                scores: {}
             })
         });
 
@@ -242,6 +243,18 @@
 
         guideContainer.html(output);
     }
+
+    window.reportScore = function (score) {
+        var profile = appState.get('profile'),
+            exoName = profile.get('page'),
+            scores = profile.get('scores');
+
+        if (!scores[exoName]) {
+            scores[exoName] = [];
+        }
+
+        scores[exoName].push(score);
+    };
 
     $(function () {
         var page = 'home',
