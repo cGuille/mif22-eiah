@@ -712,6 +712,7 @@ function CheckAnswers(){
 		setTimeout('Finish()', SubmissionTimeout);
 	}
 //alert(Score);
+      reportScore(Score);
 }
 
 function Finish(){

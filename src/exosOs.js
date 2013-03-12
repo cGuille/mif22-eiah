@@ -800,7 +800,8 @@ function TypeChars(Chars){
             child_inf[i].draggable = false;
             }
             //alert(error);
-                        if (confirm("Tu as fait "+error+" erreurs!\n[Ok] = Exercice suivant\n[Annuler] = Retour aux thèmes")){
+            reportScore(error);
+                        if (confirm("Tu as fait "+error+" erreurs!\n[Ok] = Continuer\n[Annuler] = Retour aux thèmes")){
                                 //document.location.href='...';
                         }
                         else{
