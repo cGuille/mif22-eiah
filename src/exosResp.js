@@ -1,24 +1,4 @@
-          function allowDrop(ev)
-          {
-                  if(ev.target.id=="box_inf" || ev.target.id=="box_sup"){
-                                        ev.preventDefault();
-                }
-          }
-
-          function drag(ev)
-          {
-                  ev.dataTransfer.setData("Text",ev.target.id);
-          }
-
-          function drop(ev)
-          {
-                  ev.preventDefault();
-                  var data=ev.dataTransfer.getData("Text");
-                  ev.target.appendChild(document.getElementById(data));
-                                  
-          }
-
-          function validation()
+          function validation_resp()
           {
             var error = 0;
             var child = document.getElementById('box_sup').childNodes;
@@ -64,6 +44,6 @@
                                 //document.location.href='...';
                         }
                         else{
-                                //document.location.href='...';
+                               appState.set('page', 'themes');
                         }
           }
