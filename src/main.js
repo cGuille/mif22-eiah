@@ -84,8 +84,15 @@
             var theme = $(this).parent().attr('data-theme');
 
             switch (theme) {
+                case 'Digestif':
+                    appState.set('page', type + theme);
+                    if (type === 'exos') {
+                        if (appState.get('profile').get('level') === 'college') {
+                            $('#help').css('display', 'none');
+                        }
+                    }
+                    break;
                 case 'Os':
-                case 'Digestif': 
                 case 'Respiratoire':
                     appState.set('page', type + theme);
                     break;
