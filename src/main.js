@@ -128,6 +128,7 @@
                 break;
             case 'themes':
                 $('body').html(pages[page](profile));
+                evaluate();
                 $('.cours-btn').on('click', goCours);
                 break;
             case 'coursOs':
@@ -149,6 +150,49 @@
         $('.disconnect').on('click', reset);
         appState.set('pageInitTime', +new Date());
     });
+
+    function evaluate() {
+        evaluateCours();
+        evaluateExos();
+    }
+    function evaluateCours() {
+        var coursNames = ['Os', 'Respiratoire', 'Digestif'],
+            profile = appState.get('profile'),
+            visitedPages = profile.get('visitedPages');
+
+        if (!visitedPages) {
+            return;
+        }
+
+        _(coursNames).each(function (coursName) {
+            var fullName = 'cours' + coursName,
+                stats = visitedPages[fullName];
+
+            if (!stats) {
+                return;
+            }
+
+            var coursBtnElt = $('#' + coursName),
+                averageTimeElapsed = stats.visits > 0 ? stats.timeElapsed / stats.visits : 0;
+
+            if (stats.visits > 0) {
+                if (stats.timeElapsed > 60000) {
+                    coursBtnElt.removeClass('bad');
+                    coursBtnElt.addClass('good');
+                } else {
+                    coursBtnElt.removeClass('good');
+                    coursBtnElt.addClass('bad');
+                }
+            }
+
+            // console.log(fullName + ':');
+            // console.log('  visits:', stats.visits);
+            // console.log('  time elapsed:', stats.timeElapsed);
+            // console.log('  average:', averageTimeElapsed);
+            // console.log('');
+        });
+    }
+    function evaluateExos() {}
 
     $(function () {
         var page = 'home',
