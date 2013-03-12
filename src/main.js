@@ -79,19 +79,21 @@
         return false;
     }
 
-    function goCours() {
-        var theme = $(this).attr('id');
+    function go(type) {
+        return function () {
+            var theme = $(this).parent().attr('data-theme');
 
-        switch (theme) {
-            case 'Os':
-            case 'Digestif': 
-            case 'Respiratoire':
-                appState.set('page', 'cours' + theme);
-                break;
-            default:
-                console.error('The course "' + theme + '" is not implemented (yet?).');
-                break;
-        }
+            switch (theme) {
+                case 'Os':
+                case 'Digestif': 
+                case 'Respiratoire':
+                    appState.set('page', type + theme);
+                    break;
+                default:
+                    console.error(type + theme + '" is not implemented (yet?)');
+                    break;
+            }
+        };
     }
 
     function savePageVisit(page) {
@@ -129,7 +131,8 @@
             case 'themes':
                 $('body').html(pages[page](profile));
                 evaluate();
-                $('.cours-btn').on('click', goCours);
+                $('.cours-btn').on('click', go('cours'));
+                $('.exos-btn').on('click', go('exos'));
                 break;
             case 'coursOs':
             case 'coursDigestif':  
@@ -165,18 +168,19 @@
         }
 
         _(coursNames).each(function (coursName) {
-            var fullName = 'cours' + coursName,
+            var delay = 10,
+                fullName = 'cours' + coursName,
                 stats = visitedPages[fullName];
 
             if (!stats) {
                 return;
             }
 
-            var coursBtnElt = $('#' + coursName),
+            var coursBtnElt = $('div[data-theme=' + coursName + ']').children('.cours-btn'),
                 averageTimeElapsed = stats.visits > 0 ? stats.timeElapsed / stats.visits : 0;
 
             if (stats.visits > 0) {
-                if (stats.timeElapsed > 60000) {
+                if (stats.timeElapsed > delay * 1000) {
                     coursBtnElt.removeClass('bad');
                     coursBtnElt.addClass('good');
                 } else {
